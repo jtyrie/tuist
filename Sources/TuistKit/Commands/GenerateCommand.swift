@@ -22,9 +22,16 @@ struct GenerateCommand: ParsableCommand {
     @Flag(help: "Generate a project replacing dependencies with pre-compiled assets.")
     var cache: Bool
 
+    @Option(
+        parsing: .singleValue,
+        help: "When used with --cache, it generates the given target (with the sources) even if it exists in the cache."
+    )
+    var sources: [String]
+
     func run() throws {
         try GenerateService().run(path: path,
                                   projectOnly: projectOnly,
-                                  cache: cache)
+                                  cache: cache,
+                                  cacheSources: Set(sources))
     }
 }

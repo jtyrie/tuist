@@ -20,12 +20,18 @@ struct FocusCommand: ParsableCommand {
     var cache: Bool
 
     @Option(
+        parsing: .singleValue,
+        help: "When used with --cache, it generates the given target (with the sources) even if it exists in the cache."
+    )
+    var sources: [String]
+
+    @Option(
         name: .shortAndLong,
         help: "The path to the directory containing the project you plan to focus on."
     )
     var path: String?
 
     func run() throws {
-        try FocusService().run(cache: cache, path: path)
+        try FocusService().run(cache: cache, path: path, cacheSources: Set(sources))
     }
 }
