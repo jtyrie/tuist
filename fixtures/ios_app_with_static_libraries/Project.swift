@@ -1,6 +1,7 @@
 import ProjectDescription
 
 let project = Project(name: "iOSAppWithTransistiveStaticLibraries",
+                      packages: [ .local(path: "Packages/SPMA") ],
                       targets: [
                           Target(name: "App",
                                  platform: .iOS,
@@ -10,6 +11,7 @@ let project = Project(name: "iOSAppWithTransistiveStaticLibraries",
                                  sources: "Sources/**",
                                  dependencies: [
                                      .project(target: "A", path: "Modules/A"),
+                                     .package(product: "SPMA")
                           ]),
                           Target(name: "AppTests",
                                  platform: .iOS,

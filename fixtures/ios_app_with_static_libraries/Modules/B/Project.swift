@@ -1,6 +1,7 @@
 import ProjectDescription
 
 let project = Project(name: "B",
+                      packages: [ .local(path: "../packages/SPMA") ],
                       targets: [
                           Target(name: "B",
                                  platform: .iOS,
@@ -9,8 +10,7 @@ let project = Project(name: "B",
                                  infoPlist: "Info.plist",
                                  sources: "Sources/**",
                                  dependencies: [
-                                     /* Target dependencies can be defined here */
-                                     /* .framework(path: "framework") */
+                            .package(product: "SPMA")
                           ]),
                           Target(name: "BTests",
                                  platform: .iOS,

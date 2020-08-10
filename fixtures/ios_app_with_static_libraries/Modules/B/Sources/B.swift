@@ -1,3 +1,4 @@
+import SPMA
 import Foundation
 
 public class B {
@@ -5,5 +6,6 @@ public class B {
 
     public static func printFromB() {
         print("print from B")
+        SPMA.printFromSPMA()
     }
 }
