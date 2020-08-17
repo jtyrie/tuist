@@ -1,7 +1,7 @@
 import ProjectDescription
 
 let project = Project(name: "B",
-                      packages: [ .local(path: "../packages/SPMA") ],
+                      packages: [ .local(path: "../../packages/SPMA") ],
                       targets: [
                           Target(name: "B",
                                  platform: .iOS,

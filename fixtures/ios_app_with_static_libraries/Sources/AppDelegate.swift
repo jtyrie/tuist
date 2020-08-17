@@ -1,4 +1,5 @@
 import A
+import B
 import SPMA
 import UIKit
 
@@ -14,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
 
         A.printFromA()
+        B.printFromB()
         SPMA.printFromSPMA()
 
         return true
